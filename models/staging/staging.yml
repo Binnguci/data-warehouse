@@ -1,0 +1,304 @@
+version: 2
+
+models:
+  - name: staging_phone_tgdd_temp
+    description: "Bảng staging tạm cho TGDD"
+    columns:
+      - name: field_1
+        description: "ID - Mã định danh duy nhất cho từng bản ghi"
+      - name: field_2
+        description: "Tên sản phẩm - Tên của thiết bị di động"
+      - name: field_3
+        description: "Giá bán - Giá niêm yết của sản phẩm (VNĐ)"
+      - name: field_4
+        description: "Ngày phát hành - Ngày sản phẩm được ra mắt thị trường"
+      - name: field_5
+        description: "Kích thước màn hình - Kích thước màn hình (inch)"
+      - name: field_6
+        description: "GPU - Thông tin về chip đồ họa (GPU)"
+      - name: field_7
+        description: "Camera trước - Thông số camera trước"
+      - name: field_8
+        description: "Camera sau - Thông số camera sau"
+      - name: field_9
+        description: "Màu sắc - Màu của thiết bị"
+      - name: field_10
+        description: "Bảo mật - Công nghệ bảo mật (vân tay, nhận diện khuôn mặt, v.v.)"
+      - name: field_11
+        description: "Bluetooth - Phiên bản Bluetooth hỗ trợ"
+      - name: field_12
+        description: "Dung lượng pin - Thông số dung lượng pin (mAh)"
+      - name: field_13
+        description: "Cổng giao tiếp - Loại cổng kết nối (USB, Type-C, v.v.)"
+      - name: field_14
+        description: "Thương hiệu - Tên hãng sản xuất"
+      - name: field_15
+        description: "RAM - Dung lượng RAM (GB)"
+      - name: field_16
+        description: "CPU - Thông tin bộ vi xử lý (CPU)"
+      - name: field_17
+        description: "Hệ điều hành - Hệ điều hành cài đặt trên thiết bị"
+      - name: field_18
+        description: "Bộ nhớ - Dung lượng bộ nhớ trong (GB)"
+      - name: field_19
+        description: "Chip - Loại chip xử lý chính"
+      - name: field_20
+        description: "Ảnh - Đường dẫn ảnh minh họa của sản phẩm"
+      - name: field_21
+        description: "Ngày ID - Khóa ngoại liên kết đến bảng dim_date_daily"
+
+  - name: staging_phone_cellphones_temp
+    description: "Bảng staging tạm cho Cellphones"
+    columns:
+      - name: field_1
+        description: "ID - Mã định danh duy nhất cho từng bản ghi"
+      - name: field_2
+        description: "Tên sản phẩm - Tên của thiết bị di động"
+      - name: field_3
+        description: "Giá bán - Giá niêm yết của sản phẩm (VNĐ)"
+      - name: field_4
+        description: "Ngày phát hành - Ngày sản phẩm được ra mắt thị trường"
+      - name: field_5
+        description: "Kích thước màn hình - Kích thước màn hình (inch)"
+      - name: field_6
+        description: "GPU - Thông tin về chip đồ họa (GPU)"
+      - name: field_7
+        description: "Camera trước - Thông số camera trước"
+      - name: field_8
+        description: "Camera sau - Thông số camera sau"
+      - name: field_9
+        description: "Màu sắc - Màu của thiết bị"
+      - name: field_10
+        description: "Bảo mật - Công nghệ bảo mật (vân tay, nhận diện khuôn mặt, v.v.)"
+      - name: field_11
+        description: "Bluetooth - Phiên bản Bluetooth hỗ trợ"
+      - name: field_12
+        description: "Dung lượng pin - Thông số dung lượng pin (mAh)"
+      - name: field_13
+        description: "Cổng giao tiếp - Loại cổng kết nối (USB, Type-C, v.v.)"
+      - name: field_14
+        description: "Thương hiệu - Tên hãng sản xuất"
+      - name: field_15
+        description: "RAM - Dung lượng RAM (GB)"
+      - name: field_16
+        description: "CPU - Thông tin bộ vi xử lý (CPU)"
+      - name: field_17
+        description: "Hệ điều hành - Hệ điều hành cài đặt trên thiết bị"
+      - name: field_18
+        description: "Bộ nhớ - Dung lượng bộ nhớ trong (GB)"
+      - name: field_19
+        description: "Chip - Loại chip xử lý chính"
+      - name: field_20
+        description: "Ảnh - Đường dẫn ảnh minh họa của sản phẩm"
+      - name: field_21
+        description: "Ngày ID - Khóa ngoại liên kết đến bảng dim_date_daily"
+
+  - name: staging_phone_fptshop_temp
+    description: "Bảng staging tạm cho fptshop"
+    columns:
+      - name: field_1
+        description: "ID - Mã định danh duy nhất cho từng bản ghi"
+      - name: field_2
+        description: "Tên sản phẩm - Tên của thiết bị di động"
+      - name: field_3
+        description: "Giá bán - Giá niêm yết của sản phẩm (VNĐ)"
+      - name: field_4
+        description: "Ngày phát hành - Ngày sản phẩm được ra mắt thị trường"
+      - name: field_5
+        description: "Kích thước màn hình - Kích thước màn hình (inch)"
+      - name: field_6
+        description: "GPU - Thông tin về chip đồ họa (GPU)"
+      - name: field_7
+        description: "Camera trước - Thông số camera trước"
+      - name: field_8
+        description: "Camera sau - Thông số camera sau"
+      - name: field_9
+        description: "Màu sắc - Màu của thiết bị"
+      - name: field_10
+        description: "Bảo mật - Công nghệ bảo mật (vân tay, nhận diện khuôn mặt, v.v.)"
+      - name: field_11
+        description: "Bluetooth - Phiên bản Bluetooth hỗ trợ"
+      - name: field_12
+        description: "Dung lượng pin - Thông số dung lượng pin (mAh)"
+      - name: field_13
+        description: "Cổng giao tiếp - Loại cổng kết nối (USB, Type-C, v.v.)"
+      - name: field_14
+        description: "Thương hiệu - Tên hãng sản xuất"
+      - name: field_15
+        description: "RAM - Dung lượng RAM (GB)"
+      - name: field_16
+        description: "CPU - Thông tin bộ vi xử lý (CPU)"
+      - name: field_17
+        description: "Hệ điều hành - Hệ điều hành cài đặt trên thiết bị"
+      - name: field_18
+        description: "Bộ nhớ - Dung lượng bộ nhớ trong (GB)"
+      - name: field_19
+        description: "Chip - Loại chip xử lý chính"
+      - name: field_20
+        description: "Ảnh - Đường dẫn ảnh minh họa của sản phẩm"
+      - name: field_21
+        description: "Ngày ID - Khóa ngoại liên kết đến bảng dim_date_daily"
+
+  - name: fact_phone_tgdd_daily
+    description: "Bảng fact cho TGDD lưu trữ thông tin chi tiết về các sản phẩm điện thoại theo ngày"
+    columns:
+      - name: id
+        description: "ID duy nhất cho mỗi sản phẩm"
+      - name: name
+        description: "Tên sản phẩm"
+      - name: price
+        description: "Giá sản phẩm (VNĐ)"
+      - name: release_date
+        description: "Ngày phát hành của sản phẩm"
+      - name: screen_size
+        description: "Kích thước màn hình (inch)"
+      - name: gpu
+        description: "Tên chip xử lý đồ họa (GPU)"
+      - name: front_camera
+        description: "Thông số camera trước"
+      - name: rear_camera
+        description: "Thông số camera sau"
+      - name: color
+        description: "Màu sắc của sản phẩm"
+      - name: security
+        description: "Công nghệ bảo mật của sản phẩm (vân tay, nhận diện khuôn mặt, v.v.)"
+      - name: bluetooth
+        description: "Phiên bản Bluetooth được hỗ trợ"
+      - name: battery_capacity
+        description: "Dung lượng pin của sản phẩm (mAh)"
+      - name: communication_port
+        description: "Loại cổng giao tiếp (USB, Type-C, v.v.)"
+      - name: brand
+        description: "Thương hiệu của sản phẩm"
+      - name: ram
+        description: "Dung lượng RAM (GB)"
+      - name: cpu
+        description: "Tên chip xử lý chính (CPU)"
+      - name: operating_system
+        description: "Hệ điều hành được cài đặt trên sản phẩm"
+      - name: memory
+        description: "Dung lượng bộ nhớ trong (GB)"
+      - name: chip
+        description: "Loại chip xử lý chính"
+      - name: image
+        description: "Đường dẫn đến ảnh minh họa của sản phẩm"
+      - name: date_id
+        description: "Khóa ngoại tham chiếu đến bảng dim_date_daily, liên kết dữ liệu theo ngày"
+
+  - name: fact_phone_cellphones_daily
+    description: "Bảng fact cho cell phones lưu trữ thông tin chi tiết về các sản phẩm điện thoại theo ngày"
+    columns:
+      - name: id
+        description: "ID duy nhất cho mỗi sản phẩm"
+      - name: name
+        description: "Tên sản phẩm"
+      - name: price
+        description: "Giá sản phẩm (VNĐ)"
+      - name: release_date
+        description: "Ngày phát hành của sản phẩm"
+      - name: screen_size
+        description: "Kích thước màn hình (inch)"
+      - name: gpu
+        description: "Tên chip xử lý đồ họa (GPU)"
+      - name: front_camera
+        description: "Thông số camera trước"
+      - name: rear_camera
+        description: "Thông số camera sau"
+      - name: color
+        description: "Màu sắc của sản phẩm"
+      - name: security
+        description: "Công nghệ bảo mật của sản phẩm (vân tay, nhận diện khuôn mặt, v.v.)"
+      - name: bluetooth
+        description: "Phiên bản Bluetooth được hỗ trợ"
+      - name: battery_capacity
+        description: "Dung lượng pin của sản phẩm (mAh)"
+      - name: communication_port
+        description: "Loại cổng giao tiếp (USB, Type-C, v.v.)"
+      - name: brand
+        description: "Thương hiệu của sản phẩm"
+      - name: ram
+        description: "Dung lượng RAM (GB)"
+      - name: cpu
+        description: "Tên chip xử lý chính (CPU)"
+      - name: operating_system
+        description: "Hệ điều hành được cài đặt trên sản phẩm"
+      - name: memory
+        description: "Dung lượng bộ nhớ trong (GB)"
+      - name: chip
+        description: "Loại chip xử lý chính"
+      - name: image
+        description: "Đường dẫn đến ảnh minh họa của sản phẩm"
+      - name: date_id
+        description: "Khóa ngoại tham chiếu đến bảng dim_date_daily, liên kết dữ liệu theo ngày"
+
+  - name: fact_phone_fptshop_daily
+    description: "Bảng fact cho FPT shop lưu trữ thông tin chi tiết về các sản phẩm điện thoại theo ngày"
+    columns:
+      - name: id
+        description: "ID duy nhất cho mỗi sản phẩm"
+      - name: name
+        description: "Tên sản phẩm"
+      - name: price
+        description: "Giá sản phẩm (VNĐ)"
+      - name: release_date
+        description: "Ngày phát hành của sản phẩm"
+      - name: screen_size
+        description: "Kích thước màn hình (inch)"
+      - name: gpu
+        description: "Tên chip xử lý đồ họa (GPU)"
+      - name: front_camera
+        description: "Thông số camera trước"
+      - name: rear_camera
+        description: "Thông số camera sau"
+      - name: color
+        description: "Màu sắc của sản phẩm"
+      - name: security
+        description: "Công nghệ bảo mật của sản phẩm (vân tay, nhận diện khuôn mặt, v.v.)"
+      - name: bluetooth
+        description: "Phiên bản Bluetooth được hỗ trợ"
+      - name: battery_capacity
+        description: "Dung lượng pin của sản phẩm (mAh)"
+      - name: communication_port
+        description: "Loại cổng giao tiếp (USB, Type-C, v.v.)"
+      - name: brand
+        description: "Thương hiệu của sản phẩm"
+      - name: ram
+        description: "Dung lượng RAM (GB)"
+      - name: cpu
+        description: "Tên chip xử lý chính (CPU)"
+      - name: operating_system
+        description: "Hệ điều hành được cài đặt trên sản phẩm"
+      - name: memory
+        description: "Dung lượng bộ nhớ trong (GB)"
+      - name: chip
+        description: "Loại chip xử lý chính"
+      - name: image
+        description: "Đường dẫn đến ảnh minh họa của sản phẩm"
+      - name: date_id
+        description: "Khóa ngoại tham chiếu đến bảng dim_date_daily, liên kết dữ liệu theo ngày"
+
+  - name: dim_date_daily
+    description: "Bảng dimension thời gian, lưu trữ thông tin chi tiết về ngày"
+    columns:
+      - name: date_sk
+        description: "Khóa chính duy nhất đại diện cho từng ngày"
+      - name: full_date
+        description: "Ngày đầy đủ ở định dạng YYYY-MM-DD"
+      - name: year
+        description: "Năm"
+      - name: quarter
+        description: "Quý (1, 2, 3, hoặc 4)"
+      - name: month
+        description: "Tháng trong năm (1-12)"
+      - name: day
+        description: "Ngày trong tháng (1-31)"
+      - name: week
+        description: "Số tuần trong năm (1-53)"
+      - name: weekday
+        description: "Ngày trong tuần (1 là Thứ Hai, 7 là Chủ Nhật)"
+      - name: is_weekend
+        description: "Cờ xác định ngày có phải cuối tuần hay không (1: cuối tuần, 0: ngày thường)"
+      - name: is_holiday
+        description: "Cờ xác định ngày có phải ngày lễ hay không (1: ngày lễ, 0: không)"
+      - name: holiday_name
+        description: "Tên của ngày lễ (nếu có)"

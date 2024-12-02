@@ -1,0 +1,11 @@
+id,name,price,release_date,screen_size,gpu,front_camera,rear_camera,color,security,bluetooth,battery_capacity,communication_port,brand,ram,cpu,operating_system,memory,chip,image,date_id
+1,Product 1,48171,2023-09-01,6.25,Mali-G77,16 MP,64 MP,Black,Pin,Bluetooth 5.0,5000 mAh,MicroUSB,Oppo,6 GB,Kirin 990,iOS,512 GB,Exynos,product2.jpg,6
+2,Product 2,17154,2023-11-27,7.31,Kirin 9000,8 MP,108 MP,Red,Fingerprint,Bluetooth 5.0,4000 mAh,USB Type-C,Xiaomi,6 GB,Snapdragon 888,Android,64 GB,Kirin,product1.jpg,10
+3,Product 3,96557,2023-04-16,6.1,Kirin 9000,12 MP,64 MP,Black,Fingerprint,Bluetooth 5.1,4500 mAh,MicroUSB,Huawei,12 GB,Snapdragon 888,HarmonyOS,512 GB,Apple Silicon,product3.jpg,9
+4,Product 4,36911,2023-07-26,6.66,Mali-G77,16 MP,12 MP,White,Face Unlock,Bluetooth 5.1,6000 mAh,MicroUSB,Samsung,6 GB,Kirin 990,iOS,512 GB,Qualcomm Snapdragon,product2.jpg,4
+5,Product 5,45962,2023-02-17,7.88,Kirin 9000,20 MP,48 MP,Black,Face Unlock,Bluetooth 5.0,6000 mAh,Lightning,Huawei,8 GB,Kirin 990,HarmonyOS,512 GB,Exynos,product5.jpg,6
+6,Product 6,18745,2023-01-24,7.65,Kirin 9000,16 MP,108 MP,White,Fingerprint,Bluetooth 5.0,4500 mAh,MicroUSB,Samsung,6 GB,Kirin 990,Android,256 GB,Kirin,product1.jpg,3
+7,Product 7,75285,2023-03-28,7.5,Apple A15 Bionic,20 MP,64 MP,Blue,Face Unlock,Bluetooth 5.0,4000 mAh,USB Type-C,Xiaomi,4 GB,Snapdragon 888,Android,512 GB,Exynos,product1.jpg,1
+8,Product 8,26806,2023-08-11,5.72,Adreno 650,20 MP,108 MP,Red,Fingerprint,Bluetooth 5.1,4000 mAh,USB Type-C,Apple,6 GB,Apple A14,iOS,128 GB,Exynos,product1.jpg,4
+9,Product 9,48859,2023-12-10,7.38,Kirin 9000,12 MP,108 MP,White,Face Unlock,Bluetooth 5.1,5000 mAh,Lightning,Xiaomi,4 GB,Apple A14,Android,128 GB,Qualcomm Snapdragon,product1.jpg,10
+10,Product 10,36778,2023-02-19,6.6,Adreno 650,20 MP,64 MP,Blue,Fingerprint,Bluetooth 5.2,4500 mAh,USB Type-C,Xiaomi,12 GB,Apple A14,HarmonyOS,512 GB,Apple Silicon,product2.jpg,9

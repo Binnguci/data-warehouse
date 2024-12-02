@@ -1,0 +1,29 @@
+2024-12-03 02:42:44,466 - INFO - package: mysql.connector.plugins
+2024-12-03 02:42:44,466 - INFO - plugin_name: caching_sha2_password
+2024-12-03 02:42:44,467 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-12-03 02:42:44,467 - INFO - package: mysql.connector.plugins
+2024-12-03 02:42:44,467 - INFO - plugin_name: mysql_native_password
+2024-12-03 02:42:44,467 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-12-03 02:42:44,468 - INFO - Connection to data_control successful!
+2024-12-03 02:42:44,483 - INFO - Connection to data_staging successful!
+2024-12-03 02:42:44,484 - INFO - Processing file: tgdd_data.csv
+2024-12-03 02:42:44,484 - ERROR - Error while loading data: 29 (HY000): File '/home/binnguci/Source/data-warehouse/seeds/tgdd_data.csv' not found (OS errno 13 - Permission denied)
+2024-12-03 02:42:44,485 - ERROR - Error while loading data: 29 (HY000): File '/home/binnguci/Source/data-warehouse/seeds/tgdd_data.csv' not found (OS errno 13 - Permission denied)
+2024-12-03 02:42:44,485 - ERROR - Error while loading data: 29 (HY000): File '/home/binnguci/Source/data-warehouse/seeds/tgdd_data.csv' not found (OS errno 13 - Permission denied)
+2024-12-03 02:42:44,485 - ERROR - Failed to process file after 3 attempts: tgdd_data.csv
+2024-12-03 02:42:44,488 - INFO - Log inserted for file: /home/binnguci/Source/data-warehouse/seeds/tgdd_data.csv
+2024-12-03 02:42:49,458 - INFO - Email sent successfully!
+2024-12-03 02:42:49,663 - INFO - Processing file: cellphones_data.csv
+2024-12-03 02:42:49,664 - ERROR - Error while loading data: 29 (HY000): File '/home/binnguci/Source/data-warehouse/seeds/cellphones_data.csv' not found (OS errno 13 - Permission denied)
+2024-12-03 02:42:49,664 - ERROR - Error while loading data: 29 (HY000): File '/home/binnguci/Source/data-warehouse/seeds/cellphones_data.csv' not found (OS errno 13 - Permission denied)
+2024-12-03 02:42:49,665 - ERROR - Error while loading data: 29 (HY000): File '/home/binnguci/Source/data-warehouse/seeds/cellphones_data.csv' not found (OS errno 13 - Permission denied)
+2024-12-03 02:42:49,665 - ERROR - Failed to process file after 3 attempts: cellphones_data.csv
+2024-12-03 02:42:49,669 - INFO - Log inserted for file: /home/binnguci/Source/data-warehouse/seeds/cellphones_data.csv
+2024-12-03 02:42:53,657 - INFO - Email sent successfully!
+2024-12-03 02:42:53,861 - INFO - Processing file: fptshop_data.csv
+2024-12-03 02:42:53,862 - ERROR - Error while loading data: 29 (HY000): File '/home/binnguci/Source/data-warehouse/seeds/fptshop_data.csv' not found (OS errno 13 - Permission denied)
+2024-12-03 02:42:53,862 - ERROR - Error while loading data: 29 (HY000): File '/home/binnguci/Source/data-warehouse/seeds/fptshop_data.csv' not found (OS errno 13 - Permission denied)
+2024-12-03 02:42:53,863 - ERROR - Error while loading data: 29 (HY000): File '/home/binnguci/Source/data-warehouse/seeds/fptshop_data.csv' not found (OS errno 13 - Permission denied)
+2024-12-03 02:42:53,863 - ERROR - Failed to process file after 3 attempts: fptshop_data.csv
+2024-12-03 02:42:53,870 - INFO - Log inserted for file: /home/binnguci/Source/data-warehouse/seeds/fptshop_data.csv
+2024-12-03 02:42:57,753 - INFO - Email sent successfully!

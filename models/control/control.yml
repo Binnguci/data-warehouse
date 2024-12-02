@@ -1,0 +1,87 @@
+- name: data_control
+  description: "Cơ sở dữ liệu quản lý quá trình crawl, load dữ liệu và theo dõi trạng thái xử lý."
+  tables:
+    - name: process_properties
+      description: "Bảng chứa thông tin thuộc tính của các tiến trình xử lý dữ liệu."
+      columns:
+        - name: property_id
+          description: "Khóa chính tự tăng, định danh duy nhất của thuộc tính."
+        - name: name
+          description: "Tên thuộc tính."
+        - name: header_csv
+          description: "Header của file CSV (nếu có)."
+        - name: value
+          description: "Giá trị của thuộc tính."
+        - name: last_modified
+          description: "Thời gian thuộc tính được cập nhật lần cuối, tự động cập nhật khi thay đổi."
+
+    - name: configs
+      description: "Bảng chứa thông tin cấu hình liên quan đến việc crawl và load dữ liệu."
+      columns:
+        - name: config_id
+          description: "Khóa chính tự tăng, định danh duy nhất cho mỗi cấu hình."
+        - name: save_location
+          description: "Đường dẫn lưu file."
+        - name: tble_warehouse
+          description: "Tên bảng lưu tại kho dữ liệu (warehouse)."
+        - name: tble_staging
+          description: "Tên bảng lưu tại staging."
+        - name: url
+          description: "URL dùng để crawl dữ liệu."
+        - name: file_name
+          description: "Tên file dữ liệu."
+        - name: schedule
+          description: "Lịch chạy cron job (biểu diễn dạng số)."
+        - name: staging_fields
+          description: "Danh sách các trường trong staging."
+        - name: dw_fields
+          description: "Danh sách các trường trong kho dữ liệu (data warehouse)."
+        - name: fields_terminated_by
+          description: "Ký tự phân cách giữa các trường (ví dụ: dấu phẩy ',')."
+        - name: optionally_enclosed_by
+          description: "Ký tự bao quanh (nếu có, ví dụ: dấu nháy ' hoặc \")."
+        - name: lines_terminated_by
+          description: "Ký tự kết thúc dòng."
+        - name: ignore_rows
+          description: "Số lượng dòng bỏ qua, thường là header."
+        - name: staging_table
+          description: "Tên bảng staging."
+        - name: property_id
+          description: "Khóa ngoại tham chiếu tới bảng `process_properties`."
+          foreign_key: "process_properties.property_id"
+
+    - name: status_lookup
+      description: "Bảng tra cứu các trạng thái khác nhau của quá trình xử lý dữ liệu."
+      columns:
+        - name: status_code
+          description: "Mã trạng thái, là khóa chính."
+        - name: description
+          description: "Mô tả chi tiết trạng thái."
+
+    - name: file_logs
+      description: "Bảng log theo dõi thông tin xử lý file dữ liệu."
+      columns:
+        - name: file_log_id
+          description: "Khóa chính tự tăng, định danh duy nhất của log."
+        - name: config_id
+          description: "Khóa ngoại tham chiếu tới bảng `configs`."
+          foreign_key: "configs.config_id"
+        - name: time
+          description: "Thời điểm xử lý file."
+        - name: file_path
+          description: "Đường dẫn file đã xử lý."
+        - name: count
+          description: "Số lượng bản ghi đã xử lý trong file."
+        - name: start_time
+          description: "Thời gian bắt đầu xử lý file."
+        - name: end_time
+          description: "Thời gian kết thúc xử lý file."
+        - name: process_duration
+          description: "Thời gian xử lý file (tính bằng giây, được sinh tự động)."
+        - name: file_size
+          description: "Kích thước file (đơn vị MB, có 2 chữ số thập phân)."
+        - name: update_at
+          description: "Thời gian cập nhật cuối cùng, tự động thay đổi khi dữ liệu log bị sửa đổi."
+        - name: status
+          description: "Mã trạng thái của quá trình xử lý file, tham chiếu tới bảng `status_lookup`."
+          foreign_key: "status_lookup.status_code"

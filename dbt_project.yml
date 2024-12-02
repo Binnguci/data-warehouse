@@ -1,0 +1,27 @@
+# dbt_project.yml
+
+name: 'data_warehouse'
+version: '1.0.0'
+config-version: 2
+
+# Project-level configurations
+profile: 'data_warehouse_profile'
+
+
+model-paths: ['models']
+seed-paths: ['seeds']
+test-paths: ['tests']
+analysis-paths: ['analyses']
+snapshot-paths: []
+target-path: 'logs'
+clean-targets:
+  - 'logs'
+
+models:
+  data_warehouse:
+    staging:
+      +schema: 'data_staging'
+      +materialized: 'view'  # Chọn materialization: view, table, hoặc incremental
+    control:
+      +schema: 'data_control'
+      +materialized: 'table'

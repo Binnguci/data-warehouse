@@ -1,0 +1,11 @@
+id,name,price,release_date,screen_size,gpu,front_camera,rear_camera,color,security,bluetooth,battery_capacity,communication_port,brand,ram,cpu,operating_system,memory,chip,image,date_id
+1,Product 1,56109,2023-05-03,7.94,Adreno 650,16 MP,64 MP,Green,Pin,Bluetooth 5.1,5000 mAh,MicroUSB,Xiaomi,8 GB,Apple A14,Android,256 GB,Exynos,product5.jpg,5
+2,Product 2,16446,2023-07-05,7.81,Adreno 650,12 MP,108 MP,Red,Pin,Bluetooth 5.2,6000 mAh,USB Type-C,Xiaomi,8 GB,Kirin 990,iOS,256 GB,Exynos,product2.jpg,7
+3,Product 3,50539,2023-12-08,7.5,Mali-G77,8 MP,64 MP,Green,Fingerprint,Bluetooth 5.0,5000 mAh,USB Type-C,Samsung,4 GB,Apple A14,Android,64 GB,Kirin,product2.jpg,7
+4,Product 4,30257,2023-08-09,7.21,Mali-G77,20 MP,64 MP,Blue,Pattern,Bluetooth 5.1,6000 mAh,MicroUSB,Huawei,6 GB,Exynos 2100,iOS,256 GB,Kirin,product4.jpg,10
+5,Product 5,33345,2023-10-27,7.17,Mali-G77,20 MP,64 MP,White,Fingerprint,Bluetooth 5.2,6000 mAh,USB Type-C,Xiaomi,4 GB,Apple A14,HarmonyOS,128 GB,Apple Silicon,product5.jpg,6
+6,Product 6,63812,2023-03-10,6.15,Adreno 650,16 MP,12 MP,Black,Fingerprint,Bluetooth 5.0,6000 mAh,USB Type-C,Samsung,4 GB,Apple A14,iOS,64 GB,Exynos,product4.jpg,5
+7,Product 7,25402,2023-08-01,6.87,Adreno 650,16 MP,12 MP,Blue,Pattern,Bluetooth 5.0,4500 mAh,MicroUSB,Apple,12 GB,Snapdragon 888,HarmonyOS,128 GB,Qualcomm Snapdragon,product2.jpg,7
+8,Product 8,24081,2023-08-07,5.63,Adreno 650,12 MP,48 MP,Black,Fingerprint,Bluetooth 5.1,4500 mAh,USB Type-C,Xiaomi,6 GB,Exynos 2100,Android,128 GB,Qualcomm Snapdragon,product4.jpg,2
+9,Product 9,27421,2023-10-21,7.86,Apple A15 Bionic,16 MP,48 MP,Blue,Face Unlock,Bluetooth 5.0,4000 mAh,MicroUSB,Apple,6 GB,Snapdragon 888,iOS,128 GB,Qualcomm Snapdragon,product5.jpg,5
+10,Product 10,36526,2023-09-10,5.94,Apple A15 Bionic,20 MP,108 MP,White,Pattern,Bluetooth 5.1,4500 mAh,Lightning,Huawei,8 GB,Exynos 2100,HarmonyOS,256 GB,Exynos,product3.jpg,1

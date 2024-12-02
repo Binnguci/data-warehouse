@@ -1,0 +1,10 @@
+
+target/
+dbt_packages/
+../logs/
+../.env
+.env
+.venv
+.idea
+.dbt
+.
