@@ -25,5 +25,5 @@ SELECT
     CAST(field_19 AS STRING) AS field_19,
     CAST(field_20 AS STRING) AS field_20,
     CAST(field_21 AS STRING) AS field_21
-FROM {{ source('raw', 'tggd_data') }}
+FROM {{ source('raw', 'tgdd_data') }}
 WHERE field_1 IS NOT NULL

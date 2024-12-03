@@ -1,6 +1,6 @@
 # dbt_project.yml
 
-name: 'data_warehouse'
+name: 'data_staging'
 version: '1.0.0'
 config-version: 2
 

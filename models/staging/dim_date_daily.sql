@@ -1,9 +1,9 @@
 WITH RECURSIVE dates AS (
-    SELECT DATE('2005-01-01') AS full_date
+    SELECT DATE('2010-01-01') AS full_date
     UNION ALL
     SELECT DATE(full_date + INTERVAL 1 DAY)
     FROM dates
-    WHERE full_date < DATE('2050-12-31')
+    WHERE full_date < DATE('2025-12-31')
 )
 INSERT INTO dim_date_daily (
     date_sk,

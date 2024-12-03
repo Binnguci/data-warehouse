@@ -1,0 +1,90 @@
+[0m14:42:04.047350 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e48c110ebd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e48c110dbb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e48c110db50>]}
+
+
+============================== 14:42:04.052611 | 43c78044-96f7-4581-8f23-3396621a03f4 ==============================
+[0m14:42:04.052611 [info ] [MainThread]: Running with dbt=1.7.18
+[0m14:42:04.053466 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/binnguci/.dbt', 'log_path': '/home/binnguci/Source/data-warehouse/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --select dim_date_daily.sql', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:42:04.057671 [info ] [MainThread]: target not specified in profile 'data_warehouse_profile', using 'default'
+[0m14:42:04.058527 [error] [MainThread]: Encountered an error:
+Runtime Error
+  The profile 'data_warehouse_profile' does not have a target named 'default'. The valid target names for this profile are:
+   - dev
+[0m14:42:04.060411 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.085329, "process_user_time": 2.901207, "process_kernel_time": 0.290522, "process_mem_max_rss": "2948576", "process_in_blocks": "46616", "process_out_blocks": "8", "command_success": false}
+[0m14:42:04.061357 [debug] [MainThread]: Command `dbt run` failed at 14:42:04.061100 after 0.09 seconds
+[0m14:42:04.062022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e48c110ebd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e48c110d6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e48c1d13530>]}
+[0m14:42:04.062655 [debug] [MainThread]: Flushing usage events
+[0m15:00:15.651679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7939c8f47020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7939c8f458b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7939c8f45460>]}
+
+
+============================== 15:00:15.656353 | 57c16696-0b7f-483d-9521-e8f5057d7fcb ==============================
+[0m15:00:15.656353 [info ] [MainThread]: Running with dbt=1.7.18
+[0m15:00:15.657334 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/binnguci/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/home/binnguci/Source/data-warehouse/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --select dim_date_daily.sql --target dev', 'send_anonymous_usage_stats': 'True'}
+[0m15:00:15.769775 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m15:00:15.770760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '57c16696-0b7f-483d-9521-e8f5057d7fcb', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7939c8d4b680>]}
+[0m15:00:15.899588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '57c16696-0b7f-483d-9521-e8f5057d7fcb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7939c9328dd0>]}
+[0m15:00:15.992784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '57c16696-0b7f-483d-9521-e8f5057d7fcb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7939c8f98e60>]}
+[0m15:00:15.994505 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m15:00:16.007407 [debug] [MainThread]: checksum: 73a96a48348781f5f9e9c2b644e8046e9b245437b9c870e9f58072053c5850a8, vars: {}, profile: , target: dev, version: 1.7.18
+[0m15:00:16.008455 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:00:16.009128 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '57c16696-0b7f-483d-9521-e8f5057d7fcb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7939c8397f80>]}
+[0m15:00:17.542536 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.data_warehouse.staging_phone_tgdd_temp' (models/staging/staging_phone_tgdd_temp.sql) depends on a source named 'raw.tggd_data' which was not found
+[0m15:00:17.544553 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.9610734, "process_user_time": 4.613165, "process_kernel_time": 0.276189, "process_mem_max_rss": "106624", "process_in_blocks": "6744", "process_out_blocks": "16", "command_success": false}
+[0m15:00:17.545601 [debug] [MainThread]: Command `dbt run` failed at 15:00:17.545352 after 1.96 seconds
+[0m15:00:17.546309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7939c82f7c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7939c9ec9a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7939c9e791c0>]}
+[0m15:00:17.546969 [debug] [MainThread]: Flushing usage events
+[0m15:04:38.428984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b7e26b6a690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b7e27571700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b7e26b6aea0>]}
+
+
+============================== 15:04:38.433507 | a4f1c42f-69fd-409c-9d47-67e2baae9ae1 ==============================
+[0m15:04:38.433507 [info ] [MainThread]: Running with dbt=1.7.18
+[0m15:04:38.434394 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/binnguci/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/binnguci/Source/data-warehouse/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --select staging_phone_tgdd_temp.sql --target dev', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:04:38.524740 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m15:04:38.525781 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'a4f1c42f-69fd-409c-9d47-67e2baae9ae1', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b7e266f04a0>]}
+[0m15:04:38.660569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a4f1c42f-69fd-409c-9d47-67e2baae9ae1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b7e25dbb6b0>]}
+[0m15:04:38.766429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a4f1c42f-69fd-409c-9d47-67e2baae9ae1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b7e27ac4380>]}
+[0m15:04:38.767725 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m15:04:38.781644 [debug] [MainThread]: checksum: 73a96a48348781f5f9e9c2b644e8046e9b245437b9c870e9f58072053c5850a8, vars: {}, profile: , target: dev, version: 1.7.18
+[0m15:04:38.782939 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:04:38.783766 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a4f1c42f-69fd-409c-9d47-67e2baae9ae1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b7e25c2ebd0>]}
+[0m15:04:40.339626 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.data_warehouse.staging_phone_tgdd_temp' (models/staging/staging_phone_tgdd_temp.sql) depends on a source named 'raw.tgdd_data' which was not found
+[0m15:04:40.341285 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.9817666, "process_user_time": 4.718541, "process_kernel_time": 0.285609, "process_mem_max_rss": "106816", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m15:04:40.342315 [debug] [MainThread]: Command `dbt run` failed at 15:04:40.342008 after 1.98 seconds
+[0m15:04:40.343050 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b7e27718740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b7e26906c60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b7e25dbbd70>]}
+[0m15:04:40.343835 [debug] [MainThread]: Flushing usage events
+[0m15:05:45.223525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7831a5395a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7831a56200e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7831a5395970>]}
+
+
+============================== 15:05:45.227712 | 47ba1cd8-b58e-4390-ab71-2cdd4b50281b ==============================
+[0m15:05:45.227712 [info ] [MainThread]: Running with dbt=1.7.18
+[0m15:05:45.228644 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/binnguci/Source/data-warehouse/logs', 'debug': 'False', 'profiles_dir': '/home/binnguci/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run --select staging_phone_tgdd_temp.sql --target dev', 'send_anonymous_usage_stats': 'True'}
+[0m15:05:45.324604 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `target-path` config in `dbt_project.yml` has been deprecated, and will no
+longer be supported in a future version of dbt-core. If you wish to write dbt
+artifacts to a custom directory, please use the --target-path CLI flag or
+DBT_TARGET_PATH env var instead.
+[0m15:05:45.325475 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '47ba1cd8-b58e-4390-ab71-2cdd4b50281b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7831a4fafe30>]}
+[0m15:05:45.457613 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '47ba1cd8-b58e-4390-ab71-2cdd4b50281b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7831a4fafe30>]}
+[0m15:05:45.553848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '47ba1cd8-b58e-4390-ab71-2cdd4b50281b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7831a510e540>]}
+[0m15:05:45.555176 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m15:05:45.567613 [debug] [MainThread]: checksum: 73a96a48348781f5f9e9c2b644e8046e9b245437b9c870e9f58072053c5850a8, vars: {}, profile: , target: dev, version: 1.7.18
+[0m15:05:45.568714 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:05:45.569407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '47ba1cd8-b58e-4390-ab71-2cdd4b50281b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7831a604a630>]}
+[0m15:05:47.138329 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.data_staging.staging_phone_tgdd_temp' (models/staging/staging_phone_tgdd_temp.sql) depends on a source named 'raw.tgdd_data' which was not found
+[0m15:05:47.139932 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.987501, "process_user_time": 4.702705, "process_kernel_time": 0.249984, "process_mem_max_rss": "106188", "process_out_blocks": "16", "command_success": false, "process_in_blocks": "0"}
+[0m15:05:47.140958 [debug] [MainThread]: Command `dbt run` failed at 15:05:47.140709 after 1.99 seconds
+[0m15:05:47.141709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7831a5395a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7831a3d19550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7831a5077950>]}
+[0m15:05:47.142483 [debug] [MainThread]: Flushing usage events

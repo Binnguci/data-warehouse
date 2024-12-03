@@ -2,6 +2,7 @@ version: 2
 
 models:
   - name: staging_phone_tgdd_temp
+    schema: data_staging
     description: "Bảng staging tạm cho TGDD"
     columns:
       - name: field_1

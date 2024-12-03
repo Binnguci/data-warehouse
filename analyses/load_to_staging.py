@@ -1,3 +1,4 @@
+import csv
 import logging
 from colorlog import ColoredFormatter
 import mysql.connector
@@ -105,26 +106,47 @@ def load_data_to_staging(connection, file_path, staging_table):
         if cursor:
             cursor.close()
 
-
-
-# Ghi log vào file_logs trong data_control
-def log_file_status(connection, config_id, file_path, status):
+def truncate_table(connection, table_name):
     cursor = None
     try:
+        query = f"TRUNCATE TABLE {table_name}"
+        cursor = connection.cursor()
+        cursor.execute(query)
+        connection.commit()
+    except Exception as e:
+        logger.error(f"Error while truncating table {table_name}: {e}", exc_info=True)
+        if connection:
+            connection.rollback()
+    finally:
+        if cursor:
+            cursor.close()
+
+
+def log_file_status(connection, config_id, file_path, status, file_size):
+    cursor = None
+
+    try:
+        # Đếm số lượng bản ghi trong file
+        with open(file_path, 'r') as file:
+            reader = csv.reader(file)
+            row_count = sum(1 for row in reader)
+
         query = """
-        INSERT INTO file_logs (config_id, time, file_path, status, start_time, end_time)
-        VALUES (%s, %s, %s, %s, %s, %s)
+        INSERT INTO file_logs (config_id, time, file_path, status, start_time, end_time, file_size, count, update_at)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         now = datetime.now()
         cursor = connection.cursor()
-        cursor.execute(query, (config_id, now, file_path, status, now, now))
+        cursor.execute(query, (config_id, now, file_path, status, now, now, file_size, row_count, now))
         connection.commit()
-        logger.info(f"Log inserted for file: {file_path}")
-    except Error as e:
+        logger.info(f"Log inserted for file: {file_path} with {row_count} rows")
+    except Exception as e:
         logger.error(f"Error while logging file status: {e}")
-        connection.rollback()
+        if connection:
+            connection.rollback()
     finally:
-        cursor.close()
+        if cursor:
+            cursor.close()
 
 def send_email(subject, message):
     server = None
@@ -158,37 +180,46 @@ def main():
         # 1. Lấy danh sách file cần xử lý
         pending_files = get_pending_files(connection_data_control)
 
+        if not pending_files:
+            send_email(
+                subject="No Pending Files",
+                message="There are no pending files to process. The program will now exit."
+            )
+            logger.info("No pending files found. Exiting program.")
+            return
+
         # 2. Duyệt qua từng file và thực hiện load dữ liệu
         for file in pending_files:
             config_id = file['config_id']
             file_name = file['file_name']
             staging_table = file['tble_staging']
             file_path = os.path.join('/home/binnguci/Source/data-warehouse/seeds/', file_name)
-
+            file_size = os.path.getsize(file_path)
             logger.info(f"Processing file: {file_name}")
 
             if not os.path.exists(file_path):
                 logger.warning(f"File not found: {file_path}")
-                log_file_status(connection_data_control, config_id, file_path, 'L_FE')
+                log_file_status(connection_data_control, config_id, file_path, 'L_FE', file_size)
                 continue
 
             retry_count = 0
             success = False
 
             while retry_count < 3 and not success:
+                truncate_table(connection_data_staging, staging_table)
                 success = load_data_to_staging(connection_data_staging, file_path, staging_table)
                 retry_count += 1
 
             if success:
-                log_file_status(connection_data_control, config_id, file_path, 'L_SE')
+                log_file_status(connection_data_control, config_id, file_path, 'L_SE', file_size)
                 logger.info(f"File processed successfully: {file_name}")
             else:
                 logger.error(f"Failed to process file after {retry_count} attempts: {file_name}")
-                log_file_status(connection_data_control, config_id, file_path, 'L_FE')
-                # send_email(
-                #     subject=f"Error loading file {file_name}",
-                #     message=f"File {file_name} could not be loaded to table {staging_table} after 3 attempts."
-                # )
+                log_file_status(connection_data_control, config_id, file_path, 'L_FE', file_size)
+                send_email(
+                    subject=f"Error loading file {file_name}",
+                    message=f"File {file_name} could not be loaded to table {staging_table} after 3 attempts."
+                )
     finally:
         if connection_data_control:
             connection_data_control.close()
