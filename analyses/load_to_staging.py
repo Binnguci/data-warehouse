@@ -34,7 +34,7 @@ def connect_to_data_control():
             host='127.0.0.1',
             port=3306,
             user='root',
-            password='binnguci@220121',
+            password='Trandat123',
             database='data_control',
             allow_local_infile = True
         )
@@ -53,7 +53,7 @@ def connect_to_data_staging():
             host='127.0.0.1',
             port=3306,
             user='root',
-            password='binnguci@220121',
+            password='Trandat123',
             database='data_staging',
             allow_local_infile = True
         )
@@ -185,7 +185,7 @@ def main():
                 subject="No Pending Files",
                 message="There are no pending files to process. The program will now exit."
             )
-            logger.info("No pending files found. Exiting program.")
+            logger.info("No pending files found. Exiting program.") 
             return
 
         # 2. Duyệt qua từng file và thực hiện load dữ liệu
@@ -193,7 +193,7 @@ def main():
             config_id = file['config_id']
             file_name = file['file_name']
             staging_table = file['tble_staging']
-            file_path = os.path.join('/home/binnguci/Source/data-warehouse/seeds/', file_name)
+            file_path = os.path.join('D:/Td-study/data-warehouse/seeds/', file_name)
             file_size = os.path.getsize(file_path)
             logger.info(f"Processing file: {file_name}")
 
