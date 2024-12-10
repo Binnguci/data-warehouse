@@ -27,7 +27,7 @@ logger = logging.getLogger()
 logger.addHandler(handler)
 logger.setLevel(logging.DEBUG)
 
-# Kết nối với data_control
+
 def connect_to_data_control():
     try:
         connection = mysql.connector.connect(
@@ -46,7 +46,7 @@ def connect_to_data_control():
         return None
 
 
-# Kết nối với data_staging
+# (2) Kết nối với data_staging
 def connect_to_data_staging():
     try:
         connection = mysql.connector.connect(
@@ -169,17 +169,27 @@ def send_email(subject, message):
 
 
 def main():
-    # Kết nối tới cả 2 cơ sở dữ liệu
+    # (1) Kết nối với data_control
     connection_data_control = connect_to_data_control()
+    # (2) Kết nối với data_staging
     connection_data_staging = connect_to_data_staging()
 
     if not connection_data_control or not connection_data_staging:
+        # (3). Gửi email thông báo lỗi kết nối
+        send_email(
+            subject=f"Error connect to database",
+            message=f"Error connect to database"
+        )
         return
-
     try:
-        # 1. Lấy danh sách file cần xử lý
+        # (5) truy vấn config_id, file_name, tble_staging trong bảng configs kết hợp bản
+        # file_logs trong shcema data_control để lấy các tệp chưa được xử lý
+        #  (status != 'L_SE') thông qua hàm
+        # get_pending_files()
         pending_files = get_pending_files(connection_data_control)
 
+        # 6. Kiểm tra xem có file nào cần xử lý không
+        # Nếu không có file nào cần xử lý thì gửi email thông báo "No Pending Files" và kết thúc chương trình
         if not pending_files:
             send_email(
                 subject="No Pending Files",
@@ -188,8 +198,9 @@ def main():
             logger.info("No pending files found. Exiting program.")
             return
 
-        # 2. Duyệt qua từng file và thực hiện load dữ liệu
+        # (7). Duyệt qua từng file và thực hiện load dữ liệu
         for file in pending_files:
+            # (8).  Lấy các thông tin config_id, file_name, staging_table, file_path, file_size từ file đang duyệt
             config_id = file['config_id']
             file_name = file['file_name']
             staging_table = file['tble_staging']
@@ -197,29 +208,39 @@ def main():
             file_size = os.path.getsize(file_path)
             logger.info(f"Processing file: {file_name}")
 
+
             if not os.path.exists(file_path):
                 logger.warning(f"File not found: {file_path}")
+                # (9). File tồn tại nhưng không thể đọc được, ghi log và cập nhật status = 'L_FE'
                 log_file_status(connection_data_control, config_id, file_path, 'L_FE', file_size)
                 continue
 
+            # (10). Tạo biến retry_count = 0
             retry_count = 0
             success = False
 
-            while retry_count < 3 and not success:
+            # (15). Thực hiện load lại 3 lần nếu load không thành công
+            while retry_count < 5 and not success:
+                # (11). Xóa dữ liệu trong bảng staging_table
                 truncate_table(connection_data_staging, staging_table)
+                # (12). Thực hiện load dữ liệu từ file vào bảng staging_table thông qua hàm load_data_to_staging()
                 success = load_data_to_staging(connection_data_staging, file_path, staging_table)
+                # (13). cập nhật biến retry_count
                 retry_count += 1
 
             if success:
+                # (14). Ghi log và cập nhật status = 'L_SE'
                 log_file_status(connection_data_control, config_id, file_path, 'L_SE', file_size)
                 logger.info(f"File processed successfully: {file_name}")
             else:
                 logger.error(f"Failed to process file after {retry_count} attempts: {file_name}")
+                # (16). Ghi log và cập nhật status = 'L_FE' khi load lại 3 lần không thành công
                 log_file_status(connection_data_control, config_id, file_path, 'L_FE', file_size)
                 send_email(
                     subject=f"Error loading file {file_name}",
                     message=f"File {file_name} could not be loaded to table {staging_table} after 3 attempts."
                 )
+    # (4). Đóng kết nối
     finally:
         if connection_data_control:
             connection_data_control.close()
